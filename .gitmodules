@@ -1,0 +1,3 @@
+[submodule "jquery-hoverIntent"]
+	path = jquery-hoverIntent
+	url = https://github.com/briancherne/jquery-hoverIntent
