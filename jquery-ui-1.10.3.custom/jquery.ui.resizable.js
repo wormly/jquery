@@ -335,8 +335,8 @@ $.widget("ui.resizable", $.ui.mouse, {
 		data = trigger.apply(this, [event, dx, dy]);
 
 		// Put this in the mouseDrag handler since the user can start pressing shift while resizing
-		this._updateVirtualBoundaries(event.shiftKey);
-		if (this._aspectRatio || event.shiftKey) {
+		this._updateVirtualBoundaries();
+		if (this._aspectRatio) {
 			data = this._updateRatio(data, event);
 		}
 
@@ -744,7 +744,7 @@ $.ui.plugin.add("resizable", "containment", {
 			that = $(this).data("ui-resizable"),
 			o = that.options,
 			co = that.containerOffset, cp = that.position,
-			pRatio = that._aspectRatio || event.shiftKey,
+			pRatio = that._aspectRatio
 			cop = { top:0, left:0 }, ce = that.containerElement;
 
 		if (ce[0] !== document && (/static/).test(ce.css("position"))) {
