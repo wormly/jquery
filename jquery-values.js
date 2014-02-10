@@ -38,7 +38,7 @@ $.fn.values = function(data) {
 		return data;
 	} else {
 		$.each(els, function() {
-			if (this.name && data[this.name]) {
+			if (this.name && data[this.name] !== undefined) {
 				var names = data[this.name];
 				var $this = $(this);
 				if(Object.prototype.toString.call(names) !== '[object Array]'){
