@@ -387,8 +387,8 @@ $.widget("ui.resizable", $.ui.mouse, {
 
 		data = trigger.apply(this, [ event, dx, dy ]);
 
-		this._updateVirtualBoundaries(event.shiftKey);
-		if (this._aspectRatio || event.shiftKey) {
+		this._updateVirtualBoundaries();
+		if (this._aspectRatio) {
 			data = this._updateRatio(data, event);
 		}
 
@@ -867,7 +867,7 @@ $.ui.plugin.add( "resizable", "containment", {
 			o = that.options,
 			co = that.containerOffset,
 			cp = that.position,
-			pRatio = that._aspectRatio || event.shiftKey,
+			pRatio = that._aspectRatio,
 			cop = {
 				top: 0,
 				left: 0
